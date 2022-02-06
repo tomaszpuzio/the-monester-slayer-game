@@ -25,16 +25,16 @@ const app = Vue.createApp({
     watch: {
         playerHealth(value) {
             if(value <= 0 && this.monsterHealth <= 0) {
-                this.winner = 'draw'
+                this.winner = "draw";
             } else if (value <= 0) {
-                this.winner = 'monster'
+                this.winner = "monster";
             }
         },
         monsterHealth(value) {
             if(value <= 0 && this.playerHealth <= 0) {
-                this.winner = 'draw'
+                this.winner = "draw";
             } else if (value <= 0) {
-                this.winner = 'player'
+                this.winner = "player";
             }
         }
     },
@@ -89,8 +89,11 @@ const app = Vue.createApp({
             }
 
             this.attackPlayer();
+        },
+        surrender() {
+            this.winner = "monster";
         }
     },
 });
 
-app.mount('#game');
+app.mount("#game");
