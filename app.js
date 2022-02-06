@@ -39,6 +39,12 @@ const app = Vue.createApp({
         }
     },
     methods: {
+        startNewGame() {
+            this.playerHealth = 100;
+            this.monsterHealth = 100;
+            this.attackRound = 0;
+            this.winner = null;
+        },
         attackMonster() {
             this.attackRound++;
             const attackValue = getRandomValue(5, 12);
